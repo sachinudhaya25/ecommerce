@@ -39,9 +39,9 @@ public class ECommerceApplication {
 	
 	@EventListener(ApplicationReadyEvent.class)
 	public void triggerMail() throws MessagingException {
-//		emailService.sendSimpleEmail("nudhayaraj99@gmail.com", "Mail body", "Mail subject");
-//		emailService.sendEmailWithAttachment("nudhayaraj99@gmail.com", "Mail body", "Mail subject", "D:\\private\\sachin\\mail.txt");
-		emailService.sendHtmlMessage("nudhayaraj99@gmail.com", "Mail body", "Mail subject");
+//		emailService.sendSimpleEmail("@gmail.com", "Mail body", "Mail subject");
+//		emailService.sendEmailWithAttachment("@gmail.com", "Mail body", "Mail subject", "D:\\private\\sachin\\mail.txt");
+		emailService.sendHtmlMessage("@gmail.com", "Mail body", "Mail subject");
 	}
 	
 
