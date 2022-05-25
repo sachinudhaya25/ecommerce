@@ -41,7 +41,7 @@ public class ECommerceApplication {
 	public void triggerMail() throws MessagingException {
 //		emailService.sendSimpleEmail("@gmail.com", "Mail body", "Mail subject");
 //		emailService.sendEmailWithAttachment("@gmail.com", "Mail body", "Mail subject", "D:\\private\\sachin\\mail.txt");
-		emailService.sendHtmlMessage("@gmail.com", "Mail body", "Mail subject");
+		//emailService.sendHtmlMessage("@gmail.com", "Mail body", "Mail subject");
 	}
 	
 
