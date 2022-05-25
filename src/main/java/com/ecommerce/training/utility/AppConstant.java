@@ -14,13 +14,15 @@ public class AppConstant {
 	//security
 	public static final String jwtSecret="SecretKey";
 	public static final String jwtExpirationMs="86400000";
-	
+	public static final String jwtRefreshExpirationDateInMs = "9000000";
 	
 	
 	//product
 	public static final String[] ProductHEADERs = { "Id", "Name", "Description", "Part Number","Picture","Gst","Price","Unit"};
 	
 	public static final int testStatus=HttpStatus.OK.value();
+	
+	
 	
 	public static final String getRandomNumbers() {
 		String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
