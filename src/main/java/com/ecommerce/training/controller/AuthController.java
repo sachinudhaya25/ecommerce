@@ -10,6 +10,7 @@ import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -171,4 +172,23 @@ public class AuthController {
 	        .orElseThrow(() -> new TokenRefreshException(requestRefreshToken,
 	            "Refresh token is not in database!"));
 	  }
+	 /* For testing purpose*/
+	 @PostMapping("/test")
+		public ResponseEntity<?> authenticateUser1(@Valid @RequestBody LoginRequest loginRequest) {
+		  try {
+		      //Tutorial _tutorial = tutorialRepository.save(new Tutorial(tutorial.getTitle(), tutorial.getDescription(), false));
+			  if(loginRequest.getUsername()==null || loginRequest.getPassword()==null) {
+				  
+				  
+				  return ResponseEntity.badRequest().body(new MessageResponse("username or password cannot be null"));
+			  }else if(!loginRequest.getUsername().equals("Anand") || !loginRequest.getPassword().equals("123456")) {			  	  
+				  return ResponseEntity.badRequest().body(new MessageResponse("username or password is incorrect"));
+			  }
+			  
+			  return ResponseEntity.ok().body(new MessageResponse("User login successfully"));
+		    } catch (Exception e) {
+		      return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		    }
+		}
+	 /* For testing purpose*/
 }
