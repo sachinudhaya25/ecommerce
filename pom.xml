@@ -190,6 +190,7 @@
                 </executions>
             </plugin>
 		</plugins>
+		<finalName>e-commerce</finalName>
 	</build>
 
 </project>
